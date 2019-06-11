@@ -3,9 +3,7 @@
 class Article {
   constructor(articleElement) {
     // assign this.articleElement to the passed in articleElement
-    this.articleElement = articleElement.querySelector(".article");
-    console.log(this.articleElement);
-
+    this.articleElement = articleElement;
 
     // create a reference to the ".expandButton" class. 
     this.expandButton = articleElement.querySelector(".expandButton");
@@ -18,14 +16,23 @@ class Article {
 
     
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener("click", expandArticle);
+    this.expandButton.addEventListener("click", this.expandArticle.bind(this));
+
+    this.expandButton.addEventListener("click", this.changeButtonText.bind(this));
     
   }
 
   expandArticle() {
     // Using our reference to the articleElement, toggle a class to expand or hide the article.
-    this.articleElement.classList.toggle(".article-open");
+    this.articleElement.classList.toggle("article-open");
+  }
 
+  changeButtonText(){
+    if(this.expandButton.textContent === "expand"){
+      this.expandButton.textContent = "close";
+    } else {
+      this.expandButton.textContent = "expand";
+    }
   }
 }
 
