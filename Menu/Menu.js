@@ -25,6 +25,8 @@ $(".menu ul li").click(() => {
   var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
 
   menu.css({backgroundColor:randomColor});
+
+  console.log("Menu background is now ", randomColor);
 });
 
 menu.css("color", "white");

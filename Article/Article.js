@@ -45,6 +45,9 @@ class Article {
     headerElement.css({
       backgroundColor: randomColor2
     });
+    
+    console.log("Header is now ", randomColor2, ": Header Text is now ", randomColor);
+
   }
 }
 
