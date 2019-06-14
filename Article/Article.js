@@ -33,6 +33,21 @@ class Article {
     } else {
       this.expandButton.textContent = "expand";
     }
+    var headerElement = $(".header");
+
+    var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+    var randomColor2 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+    headerElement.css({
+      color: randomColor
+    });
+    headerElement.css({
+      backgroundColor: randomColor2
+    });
+    
+    console.log("Header is now ", randomColor2, ": Header Text is now ", randomColor);
+
   }
 }
 
@@ -50,3 +65,7 @@ let articles = document.querySelectorAll(".article");
 articles.forEach((articleElement) => {
   return new Article(articleElement);
 });
+
+
+
+
